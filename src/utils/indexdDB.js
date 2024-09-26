@@ -1,7 +1,7 @@
 import { openDB } from 'idb';
 
 export const studentDB = async () => {
-  return openDB('student-db', 1, {
+  return openDB('studentDb', 1, {
     upgrade(db) {
       if (!db.objectStoreNames.contains('students')) {
         db.createObjectStore('students', { keyPath: 'id', autoIncrement: true });
